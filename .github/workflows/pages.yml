@@ -2,9 +2,9 @@ name: Deploy APY Calculator to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   pull_request:
-    branches: [main]
+    branches: [master]
   workflow_dispatch:
 
 permissions:
@@ -26,7 +26,7 @@ jobs:
         run: node --test tests/calculator.test.cjs
 
   deploy:
-    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
     needs: test
     runs-on: ubuntu-latest
     permissions:

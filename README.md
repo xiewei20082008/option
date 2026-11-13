@@ -9,10 +9,10 @@ version is also available below.
 ## Deploy to GitHub Pages
 
 1. Create a GitHub repository and upload this project, including the hidden
-   `.github/workflows/pages.yml` file. Use `main` as the default branch.
+   `.github/workflows/pages.yml` file. Use `master` as the default branch.
 2. In the repository, open **Settings → Pages → Build and deployment** and
    select **GitHub Actions** as the source.
-3. Push to `main`, or run **Deploy APY Calculator to GitHub Pages** from the
+3. Push to `master`, or run **Deploy APY Calculator to GitHub Pages** from the
    **Actions** tab using **Run workflow**.
 4. After deployment succeeds, find the published link in **Settings → Pages**
    or the workflow's `github-pages` deployment. It normally looks like
@@ -20,7 +20,7 @@ version is also available below.
 
 The workflow tests the calculation logic before publishing only the `web/`
 folder. Pull requests run tests without deploying. If you use a branch other
-than `main`, update both branch filters and the deployment condition in the
+than `master`, update both branch filters and the deployment condition in the
 workflow. No personal access token or additional secrets are required.
 
 GitHub's setup instructions:
