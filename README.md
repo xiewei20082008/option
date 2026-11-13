@@ -2,6 +2,8 @@
 
 ## Web version
 
+Live calculator: [https://xiewei20082008.github.io/option/](https://xiewei20082008.github.io/option/)
+
 Open `web/index.html` in your browser. The calculator runs entirely on your
 device, with no installation, backend, or external dependencies. The desktop
 version is also available below.
