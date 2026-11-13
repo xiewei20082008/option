@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Calculate an effective annualized return from your investment, net profit, and holding period.">
+  <title>APY Calculator</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./calculator.js" defer></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">INVESTMENT TOOLS</p>
+      <h1>APY Calculator</h1>
+      <p class="intro">Turn your net profit into an annualized return.</p>
+    </header>
+    <div class="calculator">
+      <form id="calculator" novalidate>
+        <div class="dates">
+          <div><label for="start">Start date <span>Always today</span></label><input id="start" readonly></div>
+          <div><label for="end">End date</label><input id="end" type="text" placeholder="DD-MM-YYYY" aria-describedby="date-hint" required></div>
+        </div>
+        <p id="date-hint" class="hint">Dates: DD-MM-YY or DD-MM-YYYY. Two-digit years mean 2000–2099.</p>
+        <label for="principal">Initial investment</label>
+        <input id="principal" type="text" inputmode="decimal" value="660" required>
+        <label for="profit">Total net profit</label>
+        <input id="profit" type="text" inputmode="decimal" value="30" aria-describedby="profit-hint" required>
+        <p id="profit-hint" class="hint">Exclude your original investment. Use a decimal point, without currency symbols or commas.</p>
+        <button type="submit">Calculate APY <span aria-hidden="true">→</span></button>
+      </form>
+      <section class="result" aria-label="Calculation result" aria-live="polite" aria-atomic="true">
+        <p class="eyebrow">EFFECTIVE ANNUALIZED RETURN</p>
+        <p id="apy" class="apy">—</p>
+        <p id="details"></p>
+        <p id="error" class="error"></p>
+      </section>
+    </div>
+    <aside>
+      <h2>How it works</h2>
+      <p class="formula">APY = ((1 + net profit / investment)<sup>365 / days</sup> − 1) × 100%</p>
+      <p>Uses actual elapsed days and a 365-day year. Assumes the same return repeats and profits are reinvested, with no additional deposits or withdrawals. This is not a forecast or a quoted deposit-account yield.</p>
+    </aside>
+    <footer>Calculated in your browser. Your inputs stay on your device.</footer>
+    <noscript><p>Enable JavaScript to use this calculator.</p></noscript>
+  </main>
+</body>
+</html>
